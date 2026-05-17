@@ -534,7 +534,7 @@ const FRONTEND_CHALLENGES = [
 
 // Pull in the other 3 section files
 const { BACKEND_CHALLENGES } = require('./challenges-backend');
-const { CYBERSEC_CHALLENGES } = require('./challenges-cybersecurity');
+const { CYBERSEC_CHALLENGES } = require('./challenges-cybersec');
 const { EHR_CHALLENGES } = require('./challenges-ehr');
 
 // Convert per-section arrays to flat DB rows with the section field set.
