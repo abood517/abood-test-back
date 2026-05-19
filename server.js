@@ -1,4 +1,4 @@
-// ABOOD Test - Main Server
+// MedPlay Nexus - Main Server
 // Express + SQLite + JWT authentication
 const express = require('express');
 const cors = require('cors');
@@ -497,7 +497,7 @@ async function startServer() {
   try {
     await initDatabase();
     app.listen(PORT, () => {
-      console.log(`ABOOD Test running on http://localhost:${PORT}`);
+      console.log(`MedPlay Nexus running on http://localhost:${PORT}`);
       console.log(`Open your browser at: http://localhost:${PORT}`);
     });
   } catch (err) {
