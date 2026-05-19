@@ -478,9 +478,18 @@ app.post('/api/ai/ask', authMiddleware, (req, res) => {
   }, 400);
 });
 
-// Default route - redirect to loading page
+// Public URL of the frontend (GitHub Pages). When users hit the Railway
+// backend URL directly, send them to the live frontend.
+const FRONTEND_URL = process.env.FRONTEND_URL || 'https://abood517.github.io/abood-test-FRONT/';
+
+// Default route - redirect to the frontend
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '..', 'frontend', 'pages', 'loading.html'));
+  res.redirect(FRONTEND_URL);
+});
+
+// Catch-all for non-API routes - redirect to the frontend instead of 404
+app.get(/^\/(?!api\/).*/, (req, res) => {
+  res.redirect(FRONTEND_URL);
 });
 
 // Start server after database is ready
